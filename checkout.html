@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - BEYOUNG</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      padding: 30px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .cart-summary {
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .total {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: right;
+      margin-top: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #218838;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+    }
+
+    @media screen and (max-width: 600px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Checkout</h2>
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" maxlength="10"/>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea id="address" rows="3" placeholder="Full delivery address"></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" />
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" maxlength="6"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Payment Method</label>
+      <div class="radio-group">
+        <label><input type="radio" name="payment" value="Cash on Delivery" checked> Cash on Delivery</label><br>
+        <label><input type="radio" name="payment" value="UPI"> UPI</label><br>
+        <label><input type="radio" name="payment" value="Card"> Debit/Credit Card</label>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <h3>Cart Summary</h3>
+      <div id="cartItems"></div>
+      <div class="total">Total: ₹<span id="totalAmount">0</span></div>
+    </div>
+
+    <button class="btn" onclick="placeOrder()">Place Order</button>
+  </div>
+
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItemsDiv = document.getElementById("cartItems");
+      let total = 0;
+
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        window.location.href = "index.html"; // Replace with your home page
+        return;
+      }
+
+      cartItemsDiv.innerHTML = "";
+
+      cart.forEach(item => {
+        const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
+        const itemTotal = price * item.quantity;
+        total += itemTotal;
+
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+          <span>${item.title} × ${item.quantity}</span>
+          <span>₹${itemTotal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+        `;
+        cartItemsDiv.appendChild(div);
+      });
+
+      document.getElementById("totalAmount").textContent =
+        total.toLocaleString("en-IN", { minimumFractionDigits: 2 });
+    }
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function placeOrder() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const pincode = document.getElementById("pincode").value.trim();
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      const total = document.getElementById("totalAmount").textContent;
+
+      if (!name || !email || !phone || !address || !city || !pincode) {
+        alert("❗ Please fill out all fields.");
+        return;
+      }
+
+      if (!validateEmail(email)) {
+        alert("Please enter a valid email.");
+        return;
+      }
+
+      if (phone.length !== 10 || isNaN(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+      }
+
+      if (pincode.length !== 6 || isNaN(pincode)) {
+        alert("Please enter a valid 6-digit pincode.");
+        return;
+      }
+
+      const confirmation = `
+✅ Order Success!
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+City: ${city}
+Address: ${address}
+Payment: ${payment}
+Total: ₹${total}
+      `;
+      alert(confirmation);
+      localStorage.removeItem("cart");
+      window.location.href = "thankyou.html"; // You can customize this page
+    }
+
+    loadCart();
+  </script>
+</body>
+</html>

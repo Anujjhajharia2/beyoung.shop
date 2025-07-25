@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-box {
+    width: 65%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-box h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 8px;
+}
+
+.item-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.remove-btn {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.total-box {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.clear-btn,
+.checkout-btn {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.checkout-btn {
+    background-color: #28a745;
+}
+
+.qty-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    display: none;
+    z-index: 1000;
+}
+
+.empty-message {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .cart-box {
+        width: 95%;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+

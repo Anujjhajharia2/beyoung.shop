@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Complete Navbar</title>
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" rel="stylesheet" />
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="index.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!--font awesome -->
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    referrerpolicy="no-referrer" rel="stylesheet" />
+  </link>
+  </link>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <p class="message">Free shipping sitewide on every order, don't miss out! </p>
+    <div class="auth-links">
+      <button class="btn btn-outline-light" onclick="openLogin()">Login/signup</button>
+
+
+      <div id="loginModal" style="display:none;">
+        <!-- Phone -->
+        <div id="mobileSection">
+          <input id="mobileNumber" type="tel" placeholder="Enter phone number">
+          <button onclick="sendOTP()">Send OTP</button>
+        </div>
+
+        <!-- OTP -->
+        <div id="otpSection" style="display:none;">
+          <input id="otpInput" type="text" placeholder="Enter OTP">
+          <button onclick="verifyOTP()">Verify OTP</button>
+          <p id="otpMsg"></p>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+  <!-- Main navbar -->
+  <header class="navbar">
+    <div class="logo">BEYOUNG<span class="dot">.</span></div>
+    <nav class="menu position-relative">
+      <div class="dropdown">
+        <a aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="topwearDropdown">
+          TOPWEAR
+        </a>
+        <div aria-labelledby="topwearDropdown" class="dropdown-menu mega-dropdown p-4">
+          <div class="row">
+            <div class="col-md-3">
+              <h6>T-Shirts</h6>
+              <a class="dropdown-item" href="#">plain T-shirts</a>
+              <a class="dropdown-item" href="#">Printed T-Shirts</a>
+              <a class="dropdown-item" href="#">Regular Fit T-Shirts</a>
+              <a class="dropdown-item" href="#">Oversized T-Shirts</a>
+              <a class="dropdown-item" href="#">Polo T-Shirts</a>
+              <a class="dropdown-item" href="#">Full sleeve T-Shirts</a>
+              <a class="dropdown-item" href="#">view all</a>
+            </div>
+            <div class="col-md-3">
+              <h6>Shirts</h6>
+              <a class="dropdown-item" href="#">plain sharts</a>
+              <a class="dropdown-item" href="#">satin shirts</a>
+              <a class="dropdown-item" href="#">Printed shirts</a>
+              <a class="dropdown-item" href="#">Striped shirts</a>
+              <a class="dropdown-item" href="#">Cotton shirts</a>
+              <a class="dropdown-item" href="#">corduroy shirts</a>
+              <a class="dropdown-item" href="#">partywear shirts</a>
+              <a class="dropdown-item" href="#">shackets</a>
+              <a class="dropdown-item" href="#">view all</a>
+            </div>
+            <div class="col-md-3">
+              <h6>Polos</h6>
+              <a class="dropdown-item" href="#">View all</a>
+              <!-- <a class="dropdown-item" href="#">V Neck</a> -->
+            </div>
+            <div class="col-md-3">
+              <h6>Shop For Women</h6>
+              <a class="dropdown-item" href="#">Plain T-Shirts</a>
+              <a class="dropdown-item" href="#">Oversized T-Shirts</a>
+              <a class="dropdown-item" href="#">Full-Sleeve</a>
+              <a class="dropdown-item" href="#">View all</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <a href="#">BOTTOMWEAR </a> -->
+      <div class="dropdown">
+        <a aria-expanded="false" class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="topwearDropdown">
+          BOTTOMWEAR
+        </a>
+        <div aria-labelledby="topwearDropdown" class="dropdown-menu mega-dropdown p-4">
+          <div class="row">
+            <div class="col-md-3">
+              <h6>T-Shirts</h6>
+              <a class="dropdown-item" href="#">Cargo Joggers</a>
+              <a class="dropdown-item" href="#">Cargo Pants</a>
+              <a class="dropdown-item" href="#">Trouser</a>
+              <a class="dropdown-item" href="#">Korean pants</a>
+              <a class="dropdown-item" href="#">Payjamas</a>
+              <a class="dropdown-item" href="#">Jeans</a>
+              <a class="dropdown-item" href="#">Jorts</a>
+              <a class="dropdown-item" href="#">Boxers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#">SUMMER COLLECTION</a>
+      <a href="#">COMBOS</a>
+      <a href="#">NEW ARRIVALS</a>
+    </nav>
+    <div class="icons">
+      <i aria-hidden="true" class="fa fa-search"></i>
+      <a href="cart.html" style="color: inherit; text-decoration: none; position: relative;">
+        <i aria-hidden="true" class="fa fa-shopping-cart"></i>
+      </a>
+      <a href="wishlist.html" style="color: inherit; text-decoration: none; position: relative;">
+        <i class="fa fa-heart"></i>
+      </a>
+
+
+    </div>
+  </header>
+  <!-- --------------------------------slider----------------------- -->
+  <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+    <div class="carousel-indicators">
+      <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+        data-bs-target="#carouselExampleIndicators" type="button"></button>
+      <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+        type="button"></button>
+      <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators"
+        type="button"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img alt="..." class="d-block w-100" src="banner 1.jpg" />
+      </div>
+      <div class="carousel-item">
+        <img alt="..." class="d-block w-100" src="banner2.jpg" />
+      </div>
+      <div class="carousel-item">
+        <img alt="..." class="d-block w-100" src="banner3.jpg" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+      type="button">
+      <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+      type="button">
+      <span aria-hidden="true" class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- -->
+  <section class="combo-section" style="background-color:#fff7ad;">
+    <h2>SUPER SAVING COMBOS</h2>
+    <p>Loved by 4+ millions</p>
+    <div class="slider-container">
+      <button class="slider-btn left" onclick="scrollLeft()">←</button>
+      <div class="combo-slider" id="comboSlider">
+        <div class="combo-card" style="background-color: #a0ccf6;">
+          <img alt="Full Sleeve" src="full-sleeve.jpg">
+          <h3>FULL SLEEVE</h3>
+          <p><span>Pick Any 2</span> at ₹699</p>
+          <small>Available in 8+ colors</small>
+          </img>
+        </div>
+        <div class="combo-card" style="background-color: #b5e1f4;">
+          <img alt="Plain T-Shirts" src="plain t-shirt.jpg">
+          <h3>PLAIN T-SHIRTS</h3>
+          <p><span>Pick Any 3</span> at ₹899</p>
+          <small>Available in 12+ colors | S to 5XL sizes</small>
+          </img>
+        </div>
+        <div class="combo-card" style="background-color: #f8bfc1;">
+          <img alt="Polo T-Shirts" src="polo-16-25.jpg">
+          <h3>POLO T-SHIRTS</h3>
+          <p><span>Pick Any 3</span> at ₹1399</p>
+          <small>Available in 10+ colors</small>
+          </img>
+        </div>
+        <div class="combo-card" style="background-color: #f8bfc1;">
+          <img alt="Polo T-Shirts" src="plain-shirt.jpg">
+          <h3>PLAIN SHIRTS</h3>
+          <p><span>Pick Any 3</span> at ₹1999</p>
+          <small>Available in 10+ colors</small>
+          </img>
+        </div>
+        <div class="combo-card" style="background-color: #f8bfc1;">
+          <img alt="Polo T-Shirts" src="Cargo.jpg" />
+          <h3>CARGO JOGGER</h3>
+          <p><span>Pick Any 3</span> at ₹1999</p>
+          <small>Available in 9+ colors</small>
+        </div>
+        <div class="combo-card" style="background-color: #f8bfc1;">
+          <img alt="Polo T-Shirts" src="loose-fit.jpg" />
+          <h3>LOOSE FIT PAYJAMAS</h3>
+          <p><span>Pick Any 3</span> at ₹1599</p>
+          <small>Available in 8+ colors</small>
+        </div>
+        <!-- Add more cards here if needed -->
+      </div>
+      <button class="slider-btn right" onclick="scrollRight()">→</button>
+    </div>
+    <div class="emi-info">
+      NO COST | 3 EASY EMIs - Activate at Checkout
+    </div>
+  </section>
+  <section>
+    <div class="scrolling-text-container">
+      <div class="scrolling-text">
+        Accessible Making Global Fashion Accessible Making Global Fashion
+      </div>
+    </div>
+  </section>
+  <!-------------------------- category-section ------------------------------>
+  <section class="category-section">
+    <h1>Top Rated Categories</h1>
+    <div class="categories">
+      <div class="category-card">
+        <img alt="Oversized" src="-oversized.jpg" />
+        <div class="category-info">
+          <h2>OVERSIZED</h2>
+          <p>Buy 2 for ₹998</p>
+          <p>Buy 3 for ₹1199</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <img alt="Shirts" src="shirt.jpg" />
+        <div class="category-info">
+          <h2>SHIRTS</h2>
+          <p>Buy 2 for ₹1499</p>
+          <p>Buy 3 for ₹1999</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <img alt="Printed T-Shirts" src="printed-t-shirts-.jpg" />
+        <div class="category-info">
+          <h2>PRINTED T-SHIRTS</h2>
+          <p>Buy 1 for ₹449</p>
+          <p>Buy 3 for ₹998</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <img alt="Cargos" src="cargo-n.jpg" />
+        <div class="category-info">
+          <h2>CARGOS</h2>
+          <p>Buy 2 for ₹1499</p>
+          <p>Buy 3 for ₹1998</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---------------------------------new arrivels   -->
+  <div class="newarrivel" style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h4>NEW ARRIVALS</h4>
+  </div>
+  <div class="carousel carousel-dark slide" data-bs-ride="carousel" id="carouselExampleDark">
+    <div class="carousel-indicators">
+      <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+        data-bs-target="#carouselExampleDark" type="button"></button>
+      <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleDark" type="button"></button>
+      <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleDark" type="button"></button>
+    </div>
+    <div class="carousel-inner" style="width: 1000px;margin-left: 220px;margin-top: 20px;">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img alt="..." class="d-block w-100" src="Onbre-Desktop-11-jun-25.jpg" />
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img alt="..." class="d-block w-100" src="Trouser-Desktop-11-jun-25.jpg" />
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img alt="..." class="d-block w-100" src="Jorts-Desktop-11-jun-25.jpg" />
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleDark" type="button">
+      <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleDark" type="button">
+      <span aria-hidden="true" class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-----------------------------------------                  ------------------------- -->
+  <section class="product-section">
+    <div class="filters">
+      <button class="filter-btn active">Shirts</button>
+      <button class="filter-btn">Trouser</button>
+      <button class="filter-btn">Jorts</button>
+      <button class="filter-btn">Oversize</button>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img alt="" src="cream-oxford-kurta-shirt-jun-28.jpg" />
+        <h3>Cream Oxford Kurta Shirt</h3>
+        <p><strong>₹998</strong> <span class="strike">₹1998</span> <span class="discount">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="add-to-cart" data-title="Black T-Shirt" data-price="25"
+            data-image="images/cream-oxford-kurta-shirt-jun-28.jpgw">
+            Add to Cart
+          </button>
+
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="Lavender Mist Shirt" src="new-arrival-jun-28.jpg" />
+        <h3>Lavender Mist Oxford Cotton Shirt</h3>
+        <p><strong>₹889</strong> <span class="strike">₹1799</span> <span class="discount">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="Stone Green Shirt" src="stone_green_over_dyed_patch_pocket_shirt.jpg" />
+        <h3>Stone Green Over Dyed Patch Pocket Shirt</h3>
+        <p><strong>₹1299</strong> <span class="strike">₹2899</span> <span class="discount">(55% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="Teal Blue Shirt" src="teal_blue_breezy_stand_collar_shirt.jpg" />
+        <h3>Teal Blue Breezy Stand Collar Shirt</h3>
+        <p><strong>₹998</strong> <span class="strike">₹1999</span> <span class="discount">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-----------------------------             ----------- -->
+  <div class="features-container">
+    <div class="features-card">
+      <img alt="Stone Green Shirt" src="1.jpg" />
+    </div>
+    <div class="features-card">
+      <img alt="Stone Green Shirt" src="2.jpg" />
+    </div>
+    <div class="features-card">
+      <img alt="Stone Green Shirt" src="3.jpg" />
+    </div>
+  </div>
+  <!-- -->
+  <div class="text">
+    <h4>EVERYONE'S FAVORITE</h4>
+  </div>
+  <div class="favorites-container">
+    <div class="favorite-card">
+      <img alt="Shirts" src="shirt-reimaged.jpg" />
+      <button class="card-button">Explore Collection</button>
+    </div>
+    <div class="favorite-card">
+      <img alt="Shackets" src="shacket.jpg" />
+      <button class="card-button">Explore Collection</button>
+    </div>
+    <div class="favorite-card">
+      <img alt="Partywear" src="partywear.jpg" />
+      <button class="card-button">Explore Collection</button>
+    </div>
+    <div class="favorite-card">
+      <img alt="Summer Shirts" src="summer.jpg" />
+      <button class="card-button">Explore Collection</button>
+    </div>
+  </div>
+  <!-- -->
+  <section class="combo-section">
+    <h2>BEYOUNGSTERS APPROVED</h2>
+    <p>Real reviews from real people</p>
+    <div class="slider-container1">
+      <button class="slider-btn left" onclick="scrollLeft()">←</button>
+      <div class="combo-slider" id="comboSlider">
+        <div class="combo-card">
+          <img alt="Full Sleeve" src="review-1.png">
+          </img>
+        </div>
+        <div class="combo-card">
+          <img src="reviews-2.png">
+          </img>
+        </div>
+        <div class="combo-card">
+          <img src="reviews-3.png">
+          </img>
+        </div>
+        <div class="combo-card">
+          <img src="review-6.png">
+          </img>
+        </div>
+        <div class="combo-card">
+          <img src="review-5.png">
+          </img>
+        </div>
+        <div class="combo-card">
+          <img src="reviews-7.png">
+          </img>
+        </div>
+      </div>
+      <button class="slider-btn right" onclick="scrollRight()">→</button>
+    </div>
+  </section>
+  <!--==============                 ==========================================-->
+  <section class="product-section">
+    <h2>NEW ARRIVALS</h2>
+    <p>Get them before everyone else does</p>
+    <div class="tabs">
+      <button class="tab active">View all</button>
+      <button class="tab">shirts</button>
+      <button class="tab">T-Shirts</button>
+      <button class="tab">Polo T-shirts</button>
+      <button class="tab">Jeans</button>
+      <button class="tab">Joggers</button>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img alt="" src="cream-oxford-kurta-shirt-jun-28.jpg" />
+        <h4>Cream Oxford Kurta Shirt</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1998</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="lavender_mist_oxford_cotton_shirt_neck_view_400x533.jpg" />
+        <h4>Lavender Mist Oxford Cotton Shirt</h4>
+        <p><span class="price">₹889</span> <span class="old-price">₹1799</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="stone_green_over_dyed_patch_pocket_shirt.jpg" />
+        <h4>Stone Green Over Dyed Patch Pocket...</h4>
+        <p><span class="price">₹1299</span> <span class="old-price">₹2899</span> <span class="offer">(55% off)</span>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+        </p>
+      </div>
+      <div class="product-card">
+        <img alt="" src="teal_blue_breezy_stand_collar_shirt.jpg" />
+        <h4>Teal Blue Breezy Stand Collar Shirt</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1999</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <!-- -->
+    <div class="product-grid">
+      <div class="product-card">
+        <img alt="" src="illuminati_half_sleeve_printed_t-shirt_base_3_07_2025_700x933.jpg" />
+        <h4>illuminati half sleeve printed t-shirt</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1998</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="time_is_money_half_sleeve_t-shirt_base_3_07_2025_700x933.jpg" />
+        <h4>time is money half sleeve t-shirt</h4>
+        <p><span class="price">₹889</span> <span class="old-price">₹1799</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="winged_half_sleeve_printed_t-shirt_base_3_07_2025_700x933.jpg" onmouseover="this.src='image2.jpg'"
+          onmouseout="this.src='winged_half_sleeve_printed_t-shirt_base_3_07_2025_700x933.jpg'" width="300"
+          alt="hover image" />
+
+        <h4>winged half sleeve printed t-shirt</h4>
+        <p><span class="price">₹1299</span> <span class="old-price">₹2899</span> <span class="offer">(55% off)</span>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+        </p>
+        <!-- <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+        </div> -->
+      </div>
+      <div class="product-card">
+        <img alt="" src="things_that_make_you_rich_t-shirt_base_3_07_2025_700x933.jpg" />
+        <h4>things that make you rich t-shirt</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1999</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <!-- -->
+    <div class="product-grid">
+      <div class="product-card">
+        <img alt="" src="pista_green_distressed_typo_puff_print_oversized_t-shirt_base_5_7_2025_700x933.jpg" />
+        <h4>pista green distressed typo puff..</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1998</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="bottle_green_spirituality_patchwork_acid_wash_oversized_tshirt_base_5_7_2025_700x933.jpg" />
+        <h4>bottle green spirituality..</h4>
+        <p><span class="price">₹889</span> <span class="old-price">₹1799</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="grey_back_patch_acid_wash_oversized_tshirt_base_5_7_2025_700x933.jpg" />
+        <h4>grey back patch acid wash..</h4>
+        <p><span class="price">₹1299</span> <span class="old-price">₹2899</span> <span class="offer">(55% off)</span>
+        </p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="dark_purple_rock_and_roll_hd_printed_oversized_tshirt_base_5_7_2025_700x933.jpg" />
+        <h4>dark purple rock and roll hd..</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1999</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <!-- -->
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img alt="" src="white_fur_wave_textured_shirt_base_700x933.jpg" />
+        <h4>white fur wave extured shirt</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1998</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="black_fur_wave_textured_shirt_base_700x933.jpg" />
+        <h4>black fur wave textured shirt</h4>
+        <p><span class="price">₹889</span> <span class="old-price">₹1799</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="white_oxford_cotton_shirt_base_700x933.jpg" />
+        <h4>white oxford cotton shirt</h4>
+        <p><span class="price">₹1299</span> <span class="old-price">₹2899</span> <span class="offer">(55% off)</span>
+        </p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <img alt="" src="savoy_blue_oxford_kurta_shirt_base_700x933.jpg" />
+        <h4>savoy blue oxford kurta</h4>
+        <p><span class="price">₹998</span> <span class="old-price">₹1999</span> <span class="offer">(50% off)</span></p>
+        <div class="product-buttons">
+          <button class="btn btn-outline-dark btn-sm add-to-cart">Add to Cart</button>
+          <button class="btn btn-dark btn-sm">Buy Now</button>
+          <button class="btn btn-outline-danger btn-sm add-to-wishlist">
+            <i class="fa fa-heart"></i> Wishlist
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="newsletter">
+        <p>Xclusive coupons, extra savings, and tons of EVERYDAY deals delivered straight to your inbox.</p>
+        <div class="subscribe-box">
+          <input placeholder="Enter your email address" type="email">
+          <button>Subscribe</button>
+          </input>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li>Track Order</li>
+            <li>Returns &amp; Exchange Policy</li>
+            <li>FAQs</li>
+            <li>Term and Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Shipping Policy</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>COMPANY</h4>
+          <ul>
+            <li>About Us</li>
+            <li>Collaboration</li>
+            <li>Career</li>
+            <li>Media</li>
+            <li>Beyoungistan</li>
+            <li>Beyoung Blog</li>
+            <li>Sitemap</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>STORES NEAR ME</h4>
+          <ul>
+            <li>Udaipur</li>
+            <li>Lucknow</li>
+            <li>Ahmedabad</li>
+            <li>Kota</li>
+            <li>Mirzapur</li>
+            <li>Bhilwara</li>
+            <li>More</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>LOCATION</h4>
+          <p>support@beyoung.in</p>
+          <p>Eklingpura Chouraha, Ahmedabad Main Road</p>
+          <p>(NH 8 – Near Mahadev Hotel) Udaipur, India – 313002</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="secure-payment">
+          <p>100% SECURE PAYMENT</p>
+          <img src="https://img.icons8.com/color/48/000000/google-pay-india.png">
+          <img src="https://img.icons8.com/color/48/000000/phonepe.png">
+          <img src="https://img.icons8.com/color/48/000000/visa.png">
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png">
+          </img></img></img></img>
+        </div>
+        <div class="social-icons">
+          <p>Follow Us To See Our Cooler Side</p>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/pinterest.png" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/youtube-play.png" /></a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>Copyright © 2025 Beyoung Folks Pvt Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+    updateWishlistCount();
+    setupAddToCartListeners();
+    setupWishlistListeners();
+
+    function setupAddToCartListeners() {
+      document.querySelectorAll(".add-to-cart").forEach(btn => {
+        if (!btn.classList.contains("listener-added")) {
+          btn.addEventListener("click", () => {
+            const card = btn.closest(".product-card");
+            const title = card.querySelector("h3")?.textContent.trim() || card.querySelector("h4")?.textContent.trim() || "NA";
+            const price = card.querySelector(".price")?.textContent.trim() || card.querySelector("strong")?.textContent.trim() || "₹0";
+            const image = card.querySelector("img")?.getAttribute("src");
+            const product = { title, price, image, quantity: 1 };
+            addToCart(product);
+          });
+          btn.classList.add("listener-added");
+        }
+      });
+    }
+
+    function setupWishlistListeners() {
+      document.querySelectorAll(".add-to-wishlist").forEach(btn => {
+        if (!btn.classList.contains("listener-added")) {
+          btn.addEventListener("click", () => {
+            const card = btn.closest(".product-card");
+            const title = card.querySelector("h3")?.textContent.trim() || card.querySelector("h4")?.textContent.trim() || "NA";
+            const price = card.querySelector(".price")?.textContent.trim() || card.querySelector("strong")?.textContent.trim() || "₹0";
+            const image = card.querySelector("img")?.getAttribute("src");
+            const product = { title, price, image };
+            addToWishlist(product, btn);
+          });
+          btn.classList.add("listener-added");
+        }
+      });
+    }
+
+    function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.title === product.title);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(product);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert("✅ Product added to cart!");
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const cartIcon = document.querySelector(".fa-shopping-cart");
+      if (cartIcon) {
+        let badge = document.getElementById("cart-count");
+        if (!badge) {
+          badge = document.createElement("span");
+          badge.id = "cart-count";
+          badge.style.cssText =
+            "background:red;color:white;border-radius:50%;padding:2px 6px;font-size:12px;position:absolute;top:-5px;right:-10px;";
+          cartIcon.style.position = "relative";
+          cartIcon.appendChild(badge);
+        }
+        badge.textContent = count;
+      }
+    }
+
+    function addToWishlist(product, btn) {
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const exists = wishlist.some(item => item.title === product.title);
+      if (!exists) {
+        wishlist.push(product);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        updateWishlistCount();
+        if (btn) btn.classList.add("active");
+        alert("💖 Added to wishlist!");
+      } else {
+        alert("Already in wishlist!");
+      }
+    }
+
+    function updateWishlistCount() {
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const count = wishlist.length;
+      const wishlistIcon = document.querySelector(".fa-heart");
+      if (wishlistIcon) {
+        let badge = document.getElementById("wishlist-count");
+        if (!badge) {
+          badge = document.createElement("span");
+          badge.id = "wishlist-count";
+          badge.style.cssText =
+            "background:red;color:white;border-radius:50%;padding:2px 6px;font-size:12px;position:absolute;top:-5px;right:-10px;";
+          wishlistIcon.style.position = "relative";
+          wishlistIcon.appendChild(badge);
+        }
+        badge.textContent = count;
+      }
+    }
+  });
+</script>
+
+
+
+
+  <!-- Existing external script file -->
+  <script src="script.js"></script>
+
+
+  <script>
+    let generatedOTP = "";
+
+    function openLogin() {
+      document.getElementById("loginModal").style.display = "block";
+      document.getElementById("mobileSection").style.display = "block";
+      document.getElementById("otpSection").style.display = "none";
+    }
+
+    function closeLogin() {
+      document.getElementById("loginModal").style.display = "none";
+      document.getElementById("mobileNumber").value = "";
+      document.getElementById("otpInput").value = "";
+      document.getElementById("otpMsg").textContent = "";
+    }
+
+    function sendOTP() {
+      const phone = document.getElementById("mobileNumber").value.trim();
+      if (!/^[0-9]{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+      }
+      generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
+      document.getElementById("mobileSection").style.display = "none";
+      document.getElementById("otpSection").style.display = "block";
+      document.getElementById("otpMsg").textContent = `Demo OTP: ${generatedOTP}`; // For demonstration
+    }
+
+    function verifyOTP() {
+      const otp = document.getElementById("otpInput").value.trim();
+      if (otp === generatedOTP) {
+        alert("OTP Verified! Welcome.");
+        localStorage.setItem("authUser", "true");
+        closeLogin();
+        document.querySelector(".auth-links").innerHTML = `<span class="text-white">👋 Welcome!</span>`;
+      } else {
+        alert("Incorrect OTP. Try Again.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
